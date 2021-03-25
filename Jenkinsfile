@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 withAWS(region:'us-east-1', credentials:'AWS secrets') {
-                    s3Upload(bucket: 'meetup-demo-app', workingDir:'build', path: 'angular_footer', includePathPattern:'**/*');
+                    s3Upload(bucket: 'meetup-demo-app', workingDir:'dist', path: 'angular_footer', includePathPattern:'**/*');
                 }
             }
         }
